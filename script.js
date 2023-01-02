@@ -1,38 +1,28 @@
 // create a button 
 var startBtn = document.querySelector("#Start");
-var quitBtn = document.querySelector("#quit");
-var startTimer = document.querySelector("#time");
+var deductTimeBtn = document.querySelector("#deductTime");
+var timer = document.querySelector("#time");
 
 
 console.log(document.body);
 
 startBtn.addEventListener("click", startquiz);
-quitBtn.addEventListener("click", quit);
-startBtn.addEventListener("click", timerStarts)
+startBtn.addEventListener("click", timerStarts);
+deductTimeBtn.addEventListener("click", deductTime);
+
+//startBtn.addEventListener("click", getQuiz);
 
 
 ///playing with DOM
-var welcome = document.body.children[0];
+var welcome = document.body.children[1];
 console.log(welcome);
-
-
 
 // create a code that starts the timer as soon as the button start is selected
 // start quiz
-function startquiz () {
-    // What to do
 
-    console.log ("what is the best javascript ");
-
-} 
-
-function quit () {
-    // What to do
-    welcome.style.color = "blue";
-
-    console.log("Quitiititie");
-} 
-
+//function startquiz () {
+  //  console.log ("what is the best javascript ");
+//} 
 
 //setting timer and how to reduce
 
@@ -40,31 +30,134 @@ var secondsLeft = 100;
 
 function timerStarts() {
 
+    startBtn.setAttribute("hidden","hidden");
+
+    document.getElementById("submit").style.visibility = "visible";
+
+    getquiz();
+
+
     var timerInterval = setInterval (function() {
-
         secondsLeft--;
-
-        startTimer.textContent = secondsLeft + " left";
-
+        timer.textContent = secondsLeft + " left";
 
         if(secondsLeft === 0) {
-
             clearInterval(timerInterval);
-
-            startTimer.textContent = "QUIZ ENDS";
-
+            timer.textContent = "QUIZ ENDS";
         }
-
     },1000);
+}
 
+ // startTimer.textContent = "Time Reduced";
+function deductTime () {
+    secondsLeft = secondsLeft - 10;
+} 
+
+
+
+const question = document.getElementById('question');
+const a = document.getElementById('a+');
+const b = document.getElementById('b+');
+const c = document.getElementById('c+');
+const btn = document.getElementById('submit');
+const all_answer = document.querySelectorAll('.answer');
+
+
+/*quiz data */
+const quizData = [
+    {
+      question: 'Who is the current CEO of Google ?',
+      a: 'Sunder Pichai',
+      b: 'Larry Page ',
+      c: 'Jhon Brown',
+      correct: 'a',
+    },
+    {
+      question: 'Who is the current CEO of Amazon ?',
+      a: 'Jeff Bezos',
+      b: 'Warren Buffet ',
+      c: 'Andy Jassy',
+      correct: 'c',
+    },
+    {
+      question: 'Who is the current CEO of Tesla ?',
+      a: 'Jeffry Black',
+      b: 'Elon Musk ',
+      c: 'Jhon Brown',
+      correct: 'b',
+    },
+    {
+      question: 'Who is the current CEO of Microsoft ?',
+      a: 'Satya Nadella ',
+      b: 'Tom Klington',
+      c: 'Jhon Brown',
+      correct: 'a',
+    },
+    {
+      question: 'Which of the company is owned by Mark Zkerburg ?',
+      a: 'Neuralink ',
+      b: 'Meta Platforms Inc ',
+      c: 'Metaverse LLC ',
+      correct: 'b',
+    },
+  ];
+
+
+
+let index = 0;
+let score = 0;
+
+//get the getSelected answer
+function getSelected() {
+  let ans = undefined;
+  all_answer.forEach((el) => {
+    if (el.checked) {
+      ans = el.id;
+    }
+  });
+  return ans;
+}
+
+//disselect all answer
+function deselectans() {
+  all_answer.forEach((el) => {
+    el.checked = false;
+  });
+}
+//load the quiz data
+function getquiz() {
+  deselectans();
+  question.innerText = quizData[index].question;
+  a.innerText = quizData[index].a;
+  b.innerText = quizData[index].b;
+  c.innerText = quizData[index].c;
 }
 
 
-function quit () {
-           
-        
-    secondsLeft = secondsLeft - 10;
+//move forward the quiz
+function startquiz() {
 
-    startTimer.textContent = "Time Reduced";
-    
-} 
+    btn.addEventListener('click', () => {
+
+    let ans = getSelected();
+    if (ans) {
+      if (ans == quizData[index].correct) {
+        score++;
+      }
+      else{
+
+        deductTime();
+      }
+    }
+    index++;
+    if (index < quizData.length) {
+      getquiz();
+    } else {
+      alert('score :' + secondsLeft);
+      location.reload();
+    }
+})
+  };
+
+// getquiz();
+//startquiz();

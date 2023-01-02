@@ -4,21 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
+
+
 </head>
 <body>
 
+    <aside>
+
+        <div>
+
+          <p id="time" style="text-align:center;"></p>  
+
+        </div>
+
+        
+
+   </aside>
+
     <div class="quiz"></div>
-    <h1> Welcome to the Quiz challenge</h1>
+
+    <section>
+
+
+    
+    <main id="quiz-app">
+
+        <h1 id="quiz-title">Welcome to the Quiz challenge</h1>
+        <div class="quiz-container" id="quiz">
+          <h2 id="question"></h2>
+          <li>
+            <input type="radio" id="a" name="answer" class="answer" value="a" />
+            <label for="a" id="a+"></label>
+          </li>
+          <li>
+            <input type="radio" id="b" name="answer" class="answer" value="b" />
+            <label for="b" id="b+"></label>
+          </li>
+          <li>
+            <input type="radio" id="c" name="answer" class="answer" value="c" />
+            <label for="c" id="c+"></label>
+          </li>
+          <button id="submit" value="Submit">Submit</button>
+        </div>
+      </main>
+
    
-            <button id="Start">Start</button>
+    <button id="Start">Start</button>
 
     <div id="results"></div>
 
-    <h1 id="time" style="text-align:center;"></h1>
+    <button id="deductTime">deductTime</button>
+
+   
+    </section>
 
 
-<button id="quit">quit</button>
 
 
 </body>
