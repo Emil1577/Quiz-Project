@@ -1,6 +1,6 @@
 // create a button 
 var startBtn = document.querySelector("#Start");
-var deductTimeBtn = document.querySelector("#deductTime");
+//var deductTimeBtn = document.querySelector("#deductTime");
 var timer = document.querySelector("#time");
 
 
@@ -8,7 +8,7 @@ console.log(document.body);
 
 startBtn.addEventListener("click", startquiz);
 startBtn.addEventListener("click", timerStarts);
-deductTimeBtn.addEventListener("click", deductTime);
+//deductTimeBtn.addEventListener("click", deductTime);
 
 //startBtn.addEventListener("click", getQuiz);
 
@@ -26,13 +26,14 @@ console.log(welcome);
 
 //setting timer and how to reduce
 
-var secondsLeft = 100;
+var secondsLeft = 50;
 
 function timerStarts() {
 
     startBtn.setAttribute("hidden","hidden");
-
+    document.getElementById("quiz-title").style.visibility = "hidden";
     document.getElementById("submit").style.visibility = "visible";
+    document.getElementById("quiz").style.visibility = "visible";
 
     getquiz();
 
@@ -143,9 +144,12 @@ function startquiz() {
     if (ans) {
       if (ans == quizData[index].correct) {
         score++;
+        timer.textContent = "Correct";
+
+
       }
       else{
-
+        timer.textContent = "incorrect";
         deductTime();
       }
     }
@@ -154,10 +158,39 @@ function startquiz() {
       getquiz();
     } else {
       alert('score :' + secondsLeft);
-      location.reload();
+      var gamer = prompt ("What is your name");
+
+    
+
+
+      const result = {userName: gamer, score: secondsLeft}
+
+
+const savedScores = localStorage.getItem('highscore') || '[]' // get the score, or the initial value if empty
+
+const highscores = [JSON.parse(savedScores), result] // add the result
+
+  .sort((a, b) => b.score- a.score) // sort descending
+  .slice(0, 5) // take highest 5
+
+localStorage.setItem('highscore', JSON.stringify(highscores)) // store the scores
+
+location.reload();
+
     }
+  
+
+
+
+
 })
+
   };
+
+  //
+/// Storing scores
+
+
 
 // getquiz();
 //startquiz();

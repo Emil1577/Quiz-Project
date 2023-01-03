@@ -1,12 +1,10 @@
 
 
 
-aside {
-  
+  aside {
     background-color: #b9c6ae;
     padding: 0px;
     float: right;
-
   }
   
   .welcome {
@@ -27,12 +25,25 @@ aside {
     height: 25px;
   }
   
+  ul {
+  max-width: 1000px;
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+  }
+  li {
+    position: relative;
+    text-align: left;
+    padding-left: 300px;
+  }
+
 
   #time {
     font-size: 30px;
     height: 25px;
     position: relative;
-    text-align: end;
     right: 0px;
     }
 
@@ -45,4 +56,10 @@ aside {
 
   #submit {
     visibility: hidden;
-  )
+  }
+
+
+#quiz {
+
+    visibility: hidden;
+  }
