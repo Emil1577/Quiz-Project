@@ -154,24 +154,23 @@ function startquiz() {
       }
     }
     index++;
+
     if (index < quizData.length) {
       getquiz();
+
     } else {
+
       alert('score :' + secondsLeft);
       var gamer = prompt ("What is your name");
 
+    // constant to store scores in ascending order
     
-
-
       const result = {userName: gamer, score: secondsLeft}
+      const savedScores = localStorage.getItem('highscore') || '[]' // get the score, or the initial value if empty
+      const highscores = [...JSON.parse(savedScores), result] // add the result
 
-
-const savedScores = localStorage.getItem('highscore') || '[]' // get the score, or the initial value if empty
-
-const highscores = [JSON.parse(savedScores), result] // add the result
-
-  .sort((a, b) => b.score- a.score) // sort descending
-  .slice(0, 5) // take highest 5
+  highscores.sort((a, b) => b.score- a.score) // sort descending
+  highscores.splice(5) // take highest 5
 
 localStorage.setItem('highscore', JSON.stringify(highscores)) // store the scores
 
@@ -179,8 +178,6 @@ location.reload();
 
     }
   
-
-
 
 
 })
