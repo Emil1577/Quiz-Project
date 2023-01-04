@@ -29,7 +29,6 @@ function startgame() {
 }
 //setting timer and how to reduce
 
-
 function initialStart () {
     startBtn.setAttribute("hidden","hidden");
    // document.getElementById("quiz-title").style.color = "hidden";
@@ -52,7 +51,7 @@ function playAgain () {
 
 }
 
-var secondsLeft = 20;
+var secondsLeft = 60;
 var timerInterval =("");
 
 function timerStarts() {
