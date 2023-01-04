@@ -6,8 +6,8 @@ var timer = document.querySelector("#time");
 
 console.log(document.body);
 
-startBtn.addEventListener("click", startquiz);
-startBtn.addEventListener("click", timerStarts);
+startBtn.addEventListener("click", startgame);
+//startBtn.addEventListener("click", timerStarts);
 //deductTimeBtn.addEventListener("click", deductTime);
 
 //startBtn.addEventListener("click", getQuiz);
@@ -20,36 +20,53 @@ console.log(welcome);
 // create a code that starts the timer as soon as the button start is selected
 // start quiz
 
-//function startquiz () {
-  //  console.log ("what is the best javascript ");
-//} 
-
+// function that starts the game and other functions
+function startgame() {
+  timerStarts();
+  startquiz();
+  initialStart();
+  getquiz();
+}
 //setting timer and how to reduce
 
-var secondsLeft = 50;
 
-function timerStarts() {
-
+function initialStart () {
     startBtn.setAttribute("hidden","hidden");
     document.getElementById("quiz-title").style.visibility = "hidden";
     document.getElementById("submit").style.visibility = "visible";
-    document.getElementById("quiz").style.visibility = "visible";
+    document.getElementById("quiz").style.visibility = "visible";  
+}
 
-    getquiz();
+function endQuiz () {
+  startBtn.setAttribute("visible","visible");
+  document.getElementById("quiz-title").style.visibility = "visible";
+  document.getElementById("submit").style.visibility = "hidden";
+  document.getElementById("quiz").style.visibility = "hidden";
+  logUserAndScore ()
+  stopTimer()
+}
 
+var secondsLeft = 20;
+var timerInterval =("");
 
-    var timerInterval = setInterval (function() {
+function timerStarts() {
+    timerInterval = setInterval (function() {
         secondsLeft--;
         timer.textContent = secondsLeft + " left";
-
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-            timer.textContent = "QUIZ ENDS";
+        if(secondsLeft <= 0) {
+          endQuiz();
         }
     },1000);
 }
 
- // startTimer.textContent = "Time Reduced";
+function stopTimer () {
+
+  clearInterval(timerInterval);
+  timer.textContent = "QUIZ ENDS";
+}
+
+
+// startTimer.textContent = "Time Reduced";
 function deductTime () {
     secondsLeft = secondsLeft - 10;
 } 
@@ -104,7 +121,7 @@ const quizData = [
   ];
 
 
-
+/// quiz index
 let index = 0;
 let score = 0;
 
@@ -137,57 +154,59 @@ function getquiz() {
 
 //move forward the quiz
 function startquiz() {
-
     btn.addEventListener('click', () => {
-
     let ans = getSelected();
     if (ans) {
       if (ans == quizData[index].correct) {
         score++;
         timer.textContent = "Correct";
-
-
       }
       else{
         timer.textContent = "incorrect";
         deductTime();
       }
     }
-    index++;
-
+    index++
     if (index < quizData.length) {
       getquiz();
+    } 
+    else  {
+      endQuiz();
+      }
+    })
+}
 
-    } else {
+///function to log username and scores
+function logUserAndScore () {
 
-      alert('score :' + secondsLeft);
-      var gamer = prompt ("What is your name");
+    alert('score :' + secondsLeft); 
+    var gamer = prompt ("Enter your name"); 
+    console.log(gamer);
 
-    // constant to store scores in ascending order
-    
-      const result = {userName: gamer, score: secondsLeft}
-      const savedScores = localStorage.getItem('highscore') || '[]' // get the score, or the initial value if empty
-      const highscores = [...JSON.parse(savedScores), result] // add the result
+var result = {userName: gamer, score: secondsLeft}
+var savedScores = localStorage.getItem("highscore") || '[]' // get the score, or the initial value if empty
+var highscores = [...JSON.parse(savedScores), result] // add the result
+// constant to store scores in ascending order
+
+//function for the high scores
+console.log (result);
 
   highscores.sort((a, b) => b.score- a.score) // sort descending
   highscores.splice(5) // take highest 5
 
-localStorage.setItem('highscore', JSON.stringify(highscores)) // store the scores
-
-location.reload();
-
-    }
-  
+localStorage.setItem("highscore", JSON.stringify(highscores)) // store the scores
 
 
-})
+///getting the scores written
 
-  };
+//console.log (highscores);
 
-  //
-/// Storing scores
+results.innerHTML = "High Scores" +
 
+  highscores
+  .map (score => {
+  return `<li class="high-score">${score.userName} : ${score.score} </li>`;
+  }) 
+  .join ("");
 
-
-// getquiz();
-//startquiz();
+}
