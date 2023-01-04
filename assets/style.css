@@ -1,4 +1,13 @@
+#quiz-app {
 
+  background-color: beige
+}
+
+#quiz-title {
+
+  color: blue;
+  padding-top: 10px;
+}
 
 
   aside {
@@ -51,17 +60,23 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    }
+  }
 
   section {
         font-size: 30px;
         height: 25px;
         text-align: center;
         right: 0px;
-        }
+  }
 
   #submit {
     visibility: hidden;
+    height: 50px;
+    font-size: 30px;
+    top: 25px;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
@@ -92,3 +107,9 @@
     margin-right: auto;
 
   }
+
+  #results {
+    color: gray;
+  }
+
+ 

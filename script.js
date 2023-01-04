@@ -46,9 +46,7 @@ function endQuiz () {
 }
 
 function playAgain () {
-
   location.reload();
-
 }
 
 var secondsLeft = 60;
@@ -65,18 +63,14 @@ function timerStarts() {
 }
 
 function stopTimer () {
-
   clearInterval(timerInterval);
-  timer.textContent = "QUIZ ENDS";
+  timer.textContent = ("QUIZ ENDS");
 }
-
 
 // startTimer.textContent = "Time Reduced";
 function deductTime () {
     secondsLeft = secondsLeft - 10;
 } 
-
-
 
 const question = document.getElementById('question');
 const a = document.getElementById('a+');
@@ -84,7 +78,6 @@ const b = document.getElementById('b+');
 const c = document.getElementById('c+');
 const btn = document.getElementById('submit');
 const all_answer = document.querySelectorAll('.answer');
-
 
 
 /*quiz data */
@@ -157,13 +150,13 @@ function getquiz() {
   c.innerText = quizData[index].c;
 }
 
-
 //move forward the quiz
 function startquiz() {
     btn.addEventListener('click', () => {
     let ans = getSelected();
 
     if(ans===undefined){
+      timer.textContent = "No Answer";
       deductTime();
     }
     else if (ans) {
@@ -173,7 +166,7 @@ function startquiz() {
        
       }
       else{
-        timer.textContent = "incorrect";
+        timer.textContent = "Wrong";
         deductTime();
       }
     }
@@ -210,7 +203,7 @@ localStorage.setItem("highscore", JSON.stringify(highscores)) // store the score
 
 
 //rendering high scores
-results.innerHTML = "High Scores" +
+results.innerHTML = "High Scores:" +
 
   highscores
   .map (score => {
