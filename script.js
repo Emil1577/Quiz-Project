@@ -1,13 +1,13 @@
 // create a button 
 var startBtn = document.querySelector("#Start");
-//var deductTimeBtn = document.querySelector("#deductTime");
-var timer = document.querySelector("#time");
+var playAgainBtn = document.querySelector("#playAgain");
+var timer = document.querySelector("#quiz-title");
 
 
 console.log(document.body);
 
 startBtn.addEventListener("click", startgame);
-//startBtn.addEventListener("click", timerStarts);
+playAgainBtn.addEventListener("click", playAgain);
 //deductTimeBtn.addEventListener("click", deductTime);
 
 //startBtn.addEventListener("click", getQuiz);
@@ -32,18 +32,24 @@ function startgame() {
 
 function initialStart () {
     startBtn.setAttribute("hidden","hidden");
-    document.getElementById("quiz-title").style.visibility = "hidden";
+   // document.getElementById("quiz-title").style.color = "hidden";
     document.getElementById("submit").style.visibility = "visible";
     document.getElementById("quiz").style.visibility = "visible";  
 }
 
 function endQuiz () {
   startBtn.setAttribute("visible","visible");
-  document.getElementById("quiz-title").style.visibility = "visible";
   document.getElementById("submit").style.visibility = "hidden";
   document.getElementById("quiz").style.visibility = "hidden";
+  document.getElementById("playAgain").style.visibility = "visible";
   logUserAndScore ()
   stopTimer()
+}
+
+function playAgain () {
+
+  location.reload();
+
 }
 
 var secondsLeft = 20;
@@ -81,6 +87,7 @@ const btn = document.getElementById('submit');
 const all_answer = document.querySelectorAll('.answer');
 
 
+
 /*quiz data */
 const quizData = [
     {
@@ -95,7 +102,7 @@ const quizData = [
       a: 'Jeff Bezos',
       b: 'Warren Buffet ',
       c: 'Andy Jassy',
-      correct: 'c',
+      correct: 'a',
     },
     {
       question: 'Who is the current CEO of Tesla ?',
@@ -156,16 +163,22 @@ function getquiz() {
 function startquiz() {
     btn.addEventListener('click', () => {
     let ans = getSelected();
-    if (ans) {
+
+    if(ans===undefined){
+      deductTime();
+    }
+    else if (ans) {
       if (ans == quizData[index].correct) {
         score++;
         timer.textContent = "Correct";
+       
       }
       else{
         timer.textContent = "incorrect";
         deductTime();
       }
     }
+    console.log(ans);
     index++
     if (index < quizData.length) {
       getquiz();
@@ -178,11 +191,11 @@ function startquiz() {
 
 ///function to log username and scores
 function logUserAndScore () {
-
-    alert('score :' + secondsLeft); 
+    alert("Your score is: " + secondsLeft); 
     var gamer = prompt ("Enter your name"); 
     console.log(gamer);
 
+//variables to save to storage
 var result = {userName: gamer, score: secondsLeft}
 var savedScores = localStorage.getItem("highscore") || '[]' // get the score, or the initial value if empty
 var highscores = [...JSON.parse(savedScores), result] // add the result
@@ -197,15 +210,12 @@ console.log (result);
 localStorage.setItem("highscore", JSON.stringify(highscores)) // store the scores
 
 
-///getting the scores written
-
-//console.log (highscores);
-
+//rendering high scores
 results.innerHTML = "High Scores" +
 
   highscores
   .map (score => {
-  return `<li class="high-score">${score.userName} : ${score.score} </li>`;
+  return `<p class="high-score">${score.userName} : ${score.score} points</p>`;
   }) 
   .join ("");
 
