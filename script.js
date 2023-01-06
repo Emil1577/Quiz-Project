@@ -69,7 +69,7 @@ const btn = document.getElementById('submit');
 const all_answer = document.querySelectorAll('.answer');
 
 
-/*quiz data */
+// quiz data
 const quizData = [
     {
       question: 'What is JavaScript?',
