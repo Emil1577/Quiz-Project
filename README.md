@@ -184,9 +184,13 @@ The link of the webpage is: https://emil1577.github.io/Quiz-Project/
 
 ## My Contact Information:
 
-* [LinkedIn](https://www.linkedin.com/in/emil-ronquillo-76832a32/)
+* [My LinkedIn](https://www.linkedin.com/in/emil-ronquillo-76832a32/)
 * [My Github](https://github.com/Emil1577)
 * [My Email](mailto:emilronquillo@gmail.com)
+
+## Thank you for stopping by. 
+
+Special thanks to all my Instructor, tutors and my colleagues
 
 
 
