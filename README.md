@@ -156,6 +156,18 @@ https://emil1577.github.io/Quiz-Project
       .join ("");
     }
 
+### How to use this site 
+The link of the webpage is: https://emil1577.github.io/Quiz-Project/
+
+Step 1 :Welcome hompage.
+Step 2 :"Click here to begin" button to start the quiz and the timer.  It will then show you the first questions.
+Step 3 :Choose one from the three choices of possible answers and hit submit button. The display timer will change it's text to "Correct", "Wrong" and "No Answer".  Depending on your answer.  Then it will show you the next question.
+Step 4 :When all questions are presented and answered, you will be prompted with your score and will ask you to write your name. 
+Step 5 :After submitting your name, Top 5 High Scores will be displayed. 
+Step 6 :"Play Again" button will also appear.  If you hit this button, it will bring you back to the initial webpage.
+
+
+
 
 
 
