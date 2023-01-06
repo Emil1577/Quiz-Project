@@ -14,6 +14,7 @@ https://emil1577.github.io/Quiz-Project
 1: [Webpage Screenshot](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#webpage-screenshots)
 2: [Code Snippets](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#code-snippets)
 3: [How to Play Instructions:](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#how-to-play-instructions)
+4: [My Contact Information](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#my-contact-information)
 
 ## Webpage Screenshots:
 
@@ -183,9 +184,9 @@ The link of the webpage is: https://emil1577.github.io/Quiz-Project/
 
 ## My Contact Information:
 
-[LinkedIn](https://www.linkedin.com/in/emil-ronquillo-76832a32/)
-[My Github](https://github.com/Emil1577)
-[My Email](mailto:emilronquillo@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/emil-ronquillo-76832a32/)
+* [My Github](https://github.com/Emil1577)
+* [My Email](mailto:emilronquillo@gmail.com)
 
 
 
