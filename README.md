@@ -11,10 +11,10 @@ https://emil1577.github.io/Quiz-Project
 
 ## Table Of Contents
 
-    1: Webpage 
-    2: Code Snippets[
+1: Webpage Screenshot
+2: Code Snippets[
       ](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#code-snippets)
-3: How to use this site 
+3: How to use this site [how](#How to Play Instructions:)
 
 ## Code Snippets:
 
@@ -162,7 +162,7 @@ https://emil1577.github.io/Quiz-Project
       .join ("");
     }
 
-### How to Play Instructions:
+## How to Play Instructions:
 
 The link of the webpage is: https://emil1577.github.io/Quiz-Project/
 
