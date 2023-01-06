@@ -21,7 +21,8 @@ https://emil1577.github.io/Quiz-Project
 
 <img width="1129" alt="Screen Shot 2023-01-05 at 7 21 46 PM" src="https://user-images.githubusercontent.com/119825000/210923858-08165d5b-5440-4e52-81e2-a8c220ebb856.png">
 
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 21 46 PM" src="https://user-images.githubusercontent.com/119825000/210923894-ceee5259-ca86-4b2d-bc86-c1a40289da47.png">
+<img width="1129" alt="Screen Shot 2023-01-05 at 7 23 15 PM" src="https://user-images.githubusercontent.com/119825000/210923968-e2714648-580a-4670-a0c0-2826c3c00b6d.png">
+
 
 ## Code Snippets:
 
