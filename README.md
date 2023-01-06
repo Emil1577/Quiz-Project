@@ -15,6 +15,14 @@ https://emil1577.github.io/Quiz-Project
 2: [Code Snippets](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#code-snippets)
 3: [How to Play Instructions:](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#how-to-play-instructions)
 
+## Webpage Screenshots:
+
+<img width="1129" alt="Screen Shot 2023-01-05 at 7 23 25 PM" src="https://user-images.githubusercontent.com/119825000/210923698-cf7416b4-40a3-4b14-8244-2d2dac402117.png">
+
+<img width="1129" alt="Screen Shot 2023-01-05 at 7 21 46 PM" src="https://user-images.githubusercontent.com/119825000/210923858-08165d5b-5440-4e52-81e2-a8c220ebb856.png">
+
+<img width="1129" alt="Screen Shot 2023-01-05 at 7 21 46 PM" src="https://user-images.githubusercontent.com/119825000/210923894-ceee5259-ca86-4b2d-bc86-c1a40289da47.png">
+
 ## Code Snippets:
 
 ### Variables to Start the Quiz Game
