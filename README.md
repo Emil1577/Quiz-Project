@@ -11,7 +11,7 @@ https://emil1577.github.io/Quiz-Project
 
 ## Table Of Contents
 
-1: Webpage Screenshot
+1: [Webpage Screenshot](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#webpage-screenshots
 2: [Code Snippets](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#code-snippets)
 3: [How to Play Instructions:](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#how-to-play-instructions)
 
