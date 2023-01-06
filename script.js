@@ -1,21 +1,11 @@
-// create a button 
+// create variables to start the game and buttons 
 var startBtn = document.querySelector("#Start");
 var playAgainBtn = document.querySelector("#playAgain");
 var timer = document.querySelector("#quiz-title");
 
-
-console.log(document.body);
-
 startBtn.addEventListener("click", startgame);
 playAgainBtn.addEventListener("click", playAgain);
-//deductTimeBtn.addEventListener("click", deductTime);
 
-//startBtn.addEventListener("click", getQuiz);
-
-
-///playing with DOM
-var welcome = document.body.children[1];
-console.log(welcome);
 
 // create a code that starts the timer as soon as the button start is selected
 // start quiz
@@ -31,7 +21,6 @@ function startgame() {
 
 function initialStart () {
     startBtn.setAttribute("hidden","hidden");
-   // document.getElementById("quiz-title").style.color = "hidden";
     document.getElementById("submit").style.visibility = "visible";
     document.getElementById("quiz").style.visibility = "visible";  
 }
@@ -55,7 +44,7 @@ var timerInterval =("");
 function timerStarts() {
     timerInterval = setInterval (function() {
         secondsLeft--;
-        timer.textContent = secondsLeft + " left";
+        timer.textContent = secondsLeft + "s left";
         if(secondsLeft <= 0) {
           endQuiz();
         }
@@ -83,38 +72,38 @@ const all_answer = document.querySelectorAll('.answer');
 /*quiz data */
 const quizData = [
     {
-      question: 'Who is the current CEO of Google ?',
-      a: 'Sunder Pichai',
-      b: 'Larry Page ',
-      c: 'Jhon Brown',
+      question: 'What is JavaScript?',
+      a: 'JavaScript is a scripting language used to make the website interactive',
+      b: 'JavaScript is an assembly language used to make the website interactive',
+      c: 'JavaScript is a compiled language used to make the website interactive',
       correct: 'a',
     },
     {
-      question: 'Who is the current CEO of Amazon ?',
-      a: 'Jeff Bezos',
-      b: 'Warren Buffet ',
-      c: 'Andy Jassy',
-      correct: 'a',
+      question: 'Arrays in JavaScript are defined by which of the following statements?',
+      a: 'JavaScript is an Object-Oriented language',
+      b: 'JavaScript is Assembly-language',
+      c: 'JavaScript is an Object-Based language',
+      correct: 'c',
     },
     {
-      question: 'Who is the current CEO of Tesla ?',
-      a: 'Jeffry Black',
-      b: 'Elon Musk ',
-      c: 'Jhon Brown',
+      question: 'Which of the following is correct about JavaScript?',
+      a: 'JavaScript is a scripting language used to make the website interactive',
+      b: 'JavaScript is an assembly language used to make the website interactive',
+      c: ' JavaScript is a compiled language used to make the website interactive',
       correct: 'b',
     },
     {
-      question: 'Who is the current CEO of Microsoft ?',
-      a: 'Satya Nadella ',
-      b: 'Tom Klington',
-      c: 'Jhon Brown',
-      correct: 'a',
+      question: 'Among the given statements, which statement defines closures in JavaScript?',
+      a: 'JavaScript is a function that is enclosed with references to its inner function scope',
+      b: 'JavaScript is a function that is enclosed with references to its lexical environment',
+      c: 'JavaScript is a function that is enclosed with the object to its inner function scope',
+      correct: 'b',
     },
     {
-      question: 'Which of the company is owned by Mark Zkerburg ?',
-      a: 'Neuralink ',
-      b: 'Meta Platforms Inc ',
-      c: 'Metaverse LLC ',
+      question: 'Where is Client-side JavaScript code is embedded within HTML documents?',
+      a: 'A URL that uses the special javascript:code',
+      b: 'A URL that uses the special javascript:protocol',
+      c: 'A URL that uses the special javascript:encoding',
       correct: 'b',
     },
   ];
@@ -163,7 +152,6 @@ function startquiz() {
       if (ans == quizData[index].correct) {
         score++;
         timer.textContent = "Correct";
-       
       }
       else{
         timer.textContent = "Wrong";
@@ -181,26 +169,29 @@ function startquiz() {
     })
 }
 
+
 ///function to log username and scores
 function logUserAndScore () {
     alert("Your score is: " + secondsLeft); 
-    var gamer = prompt ("Enter your name"); 
-    console.log(gamer);
+    var players = prompt ("Enter your name"); 
+    console.log(players);
+    player = players;
+    showHighScores();
+}
 
-//variables to save to storage
-var result = {userName: gamer, score: secondsLeft}
+//function for the high scores
+
+function showHighScores(){
+  //variables to save to storage
+var result = {userName: player, score: secondsLeft}
 var savedScores = localStorage.getItem("highscore") || '[]' // get the score, or the initial value if empty
 var highscores = [...JSON.parse(savedScores), result] // add the result
 // constant to store scores in ascending order
 
-//function for the high scores
 console.log (result);
-
   highscores.sort((a, b) => b.score- a.score) // sort descending
   highscores.splice(5) // take highest 5
-
 localStorage.setItem("highscore", JSON.stringify(highscores)) // store the scores
-
 
 //rendering high scores
 results.innerHTML = "High Scores:" +
@@ -210,5 +201,4 @@ results.innerHTML = "High Scores:" +
   return `<p class="high-score">${score.userName} : ${score.score} points</p>`;
   }) 
   .join ("");
-
 }

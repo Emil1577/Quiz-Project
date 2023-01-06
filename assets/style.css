@@ -45,7 +45,8 @@
   li {
     position: relative;
     text-align: left;
-    padding-left: 300px;
+    padding-left: 150px;
+    font-size: 25px;
   }
 
   p {
@@ -69,6 +70,10 @@
         right: 0px;
   }
 
+  h2 {
+
+    font-size: 30px;
+  }
   #submit {
     visibility: hidden;
     height: 50px;
