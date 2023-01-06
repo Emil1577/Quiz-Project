@@ -8,6 +8,22 @@ Here is the link to my game.  Feel free to share with your friends and family.
 
 https://emil1577.github.io/Quiz-Project
 
+## Table Of Contents
+
+## Code Snippets:
+
+### Variables to Start the Quiz Game
+
+  var startBtn = document.querySelector("#Start");
+  var playAgainBtn = document.querySelector("#playAgain");  
+  var timer = document.querySelector("#quiz-title");
+
+  startBtn.addEventListener("click", startgame);
+  playAgainBtn.addEventListener("click", playAgain);
+
+
+
+
 
 
 
