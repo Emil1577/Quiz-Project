@@ -2,7 +2,7 @@
 
 ## Decription
 
-This JavaScript Code Quiz Project.  There are 5 multiple choice questions. You will be given 60 seconds to complete the test.  The timer will continue to count,  if incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based of the time remaining.  The more time left the higher your score is.  You will see your scores after all questions are answered. It will then ask you to enter your name.  If you make it to top 5 imm scoring your name will appear in the High Scores list.  High Scores list will then be shown right after you enter your name.  Good luck and have fun!
+This JavaScript Code Quiz Project.  There are 5 multiple choice questions. You will be given 60 seconds to complete the test.  The timer will continue if correct answer is selected. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 scoring, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
 
 Here is the link to my game.  Feel free to share with your friends and family.
 
@@ -181,7 +181,10 @@ The link of the webpage is: https://emil1577.github.io/Quiz-Project/
     Step 5 :After submitting your name, Top 5 High Scores will be displayed. 
     Step 6 :"Play Again" button will also appear.  If you hit this button, it will bring you back to the initial webpage.
 
+## My Contact Information:
 
+[LinkedIn}(https://www.linkedin.com/in/emil-ronquillo-76832a32/)
+[My Github}(https://github.com/Emil1577)
 
 
 
