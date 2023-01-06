@@ -21,7 +21,7 @@ https://emil1577.github.io/Quiz-Project
     startBtn.addEventListener("click", startgame);
     playAgainBtn.addEventListener("click", playAgain);
     
-### Functions to Startand end the game
+### Functions to Start and End the game
 
     function startgame() {
       timerStarts();
@@ -75,6 +75,86 @@ https://emil1577.github.io/Quiz-Project
         secondsLeft = secondsLeft - 10;
     } 
 
+### function to start quiz and conditions when correct or wrong answer is selected.
+
+    function deselectans() {
+      all_answer.forEach((el) => {
+        el.checked = false;
+      });
+    }
+    //load the quiz data
+    function getquiz() {
+      deselectans();
+      question.innerText = quizData[index].question;
+      a.innerText = quizData[index].a;
+      b.innerText = quizData[index].b;
+      c.innerText = quizData[index].c;
+    }
+
+    //move forward the quiz
+    function startquiz() {
+        btn.addEventListener('click', () => {
+        let ans = getSelected();
+
+        if(ans===undefined){
+          timer.textContent = "No Answer";
+          deductTime();
+        }
+        else if (ans) {
+          if (ans == quizData[index].correct) {
+            score++;
+            timer.textContent = "Correct";
+          }
+          else{
+            timer.textContent = "Wrong";
+            deductTime();
+          }
+        }
+        console.log(ans);
+        index++
+        if (index < quizData.length) {
+          getquiz();
+        } 
+        else  {
+          endQuiz();
+          }
+        })
+    }
+    
+### Function to store players and show high scores:
+    
+    ///function to log username and scores
+    function logUserAndScore () {
+        alert("Your score is: " + secondsLeft); 
+        var players = prompt ("Enter your name"); 
+        console.log(players);
+        player = players;
+        showHighScores();
+    }
+
+    //function for the high scores
+
+    function showHighScores(){
+      //variables to save to storage
+    var result = {userName: player, score: secondsLeft}
+    var savedScores = localStorage.getItem("highscore") || '[]' // get the score, or the initial value if empty
+    var highscores = [...JSON.parse(savedScores), result] // add the result
+    // constant to store scores in ascending order
+
+    console.log (result);
+      highscores.sort((a, b) => b.score- a.score) // sort descending
+      highscores.splice(5) // take highest 5
+    localStorage.setItem("highscore", JSON.stringify(highscores)) // store the scores
+
+    //rendering high scores
+    results.innerHTML = "High Scores:" +
+
+      highscores
+      .map (score => {
+      return `<p class="high-score">${score.userName} : ${score.score} points</p>`;
+      }) 
+      .join ("");
+    }
 
 
 
