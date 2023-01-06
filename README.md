@@ -2,7 +2,7 @@
 
 ## Decription
 
-This JavaScript Code Quiz Project.  There are 5 multiple choice questions. You will be given 60 seconds to complete the test.  The timer will continue if correct answer is selected. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 scoring, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
+This JavaScript Code Quiz Project.  There are 5 multiple choice questions. You will be given 60 seconds to complete the test.  The timer will continue if your answer is correct. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 highest scores, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
 
 Here is the link to my game.  Feel free to share with your friends and family.
 
@@ -20,7 +20,7 @@ https://emil1577.github.io/Quiz-Project
 
 <img width="1129" alt="Screen Shot 2023-01-05 at 7 23 25 PM" src="https://user-images.githubusercontent.com/119825000/210923698-cf7416b4-40a3-4b14-8244-2d2dac402117.png">
 
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 21 46 PM" src="https://user-images.githubusercontent.com/119825000/210923858-08165d5b-5440-4e52-81e2-a8c220ebb856.png">
+<img width="1129" alt="Screen Shot 2023-01-05 at 7 46 06 PM" src="https://user-images.githubusercontent.com/119825000/210925981-1a2f73fe-4c7d-4a4d-bb19-7d4d5f67497c.png">
 
 <img width="1129" alt="Screen Shot 2023-01-05 at 7 23 15 PM" src="https://user-images.githubusercontent.com/119825000/210923968-e2714648-580a-4670-a0c0-2826c3c00b6d.png">
 
